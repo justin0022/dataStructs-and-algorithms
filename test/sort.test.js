@@ -1,6 +1,6 @@
 /* global test, expect */
 
-const u = require('../dataStructure')
+const u = require('../algorithm.js')
 
 const sort = u().sort
 
