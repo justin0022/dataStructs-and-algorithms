@@ -1,4 +1,6 @@
-const u = require('../')
+/* global test, expect */
+
+const u = require('..')
 
 const sort = u().sort
 
