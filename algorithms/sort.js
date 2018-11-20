@@ -7,11 +7,20 @@ const quickSort = a => {
   return [...quickSort(left), middle, ...quickSort(right)]
 }
 
+const merge = (left, right) => {
+
+}
+
 const mergeSort = a => {
   const arr = [...a]
-  // todo
 
-  return arr
+  if (arr.length === 1) return a
+
+  const middle = Math.floor(arr.length / 2)
+  const leftHalf = arr.slice(0, middle)
+  const rightHalf = arr.slice(middle)
+  // todo
+  return merge(mergeSort(leftHalf), mergeSort(rightHalf))
 }
 
 const selectionSort = a => {
