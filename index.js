@@ -1,7 +1,7 @@
 const sort = require('./util/sort')
 
 module.exports = createUtil = () => {
-  return {
+  return Object.freeze({
     sort
-  }
+  })
 }
