@@ -1,0 +1,25 @@
+{
+  "name": "prototype-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin0022/utils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justin0022/utils/issues"
+  },
+  "homepage": "https://github.com/justin0022/utils#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
