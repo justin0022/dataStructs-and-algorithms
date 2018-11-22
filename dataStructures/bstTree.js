@@ -1,11 +1,12 @@
-const createNode = val => ({
-  val,
-  left: null,
-  right: null
-})
-
 const createBST = () => {
+  const createNode = val => ({
+    val,
+    left: null,
+    right: null
+  })
+
   let root = null
+
   return {
     insert: function (val) {
       const node = createNode(val)
@@ -28,13 +29,15 @@ const createBST = () => {
       return this
     },
     find: function (val) {
+      let found = null
       const search = (node, val) => {
         if (node === null) return null
         else if (val < node.val) search(node.left, val)
         else if (val > node.val) search(node.right, val)
-        else return node
+        else found = node
       }
-      return search(root, val)
+      search(root, val)
+      return found
     },
     delete: val => {
 

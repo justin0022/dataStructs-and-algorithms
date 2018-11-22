@@ -8,4 +8,4 @@ bst
   .insert(10)
   .insert(7)
 
-console.log(bst.getTree())
+console.log(bst.find(15))
