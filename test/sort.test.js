@@ -8,7 +8,7 @@ const {
   selectionSort,
   bogoSort,
   bubbleSort
-} = u().sort
+} = u.sort
 
 test('quickSort sorts an array of numbers from smallest to largest', () => {
   expect(quickSort).toBeDefined()

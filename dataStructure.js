@@ -1,7 +1,5 @@
-const bstTree = require('./dataStructures/bstTree.js')
+const createBST = require('./dataStructures/bstTree.js')
 
-module.exports = () => {
-  return Object.freeze({
-    bstTree
-  })
-}
+module.exports = Object.freeze({
+  createBST
+})
