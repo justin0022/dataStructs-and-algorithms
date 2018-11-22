@@ -30,7 +30,27 @@ const selectionSort = a => {
   return arr
 }
 
+// Bogosort can be described as follows:
+
+// 1. Check if your list of number is sorted. If so, stop. If not, go to step 2.
+// 2. Rearrange the list of numbers randomly.
+// 3. Go to step 1.
+
 const bogoSort = a => {
+  const arr = [...a]
+  // todo
+
+  return arr
+}
+
+// Bogobogosort specifies how one should check if the list of numbers is sorted. It does it recursively, because as anyone who knows anything at all about computer science knows, recursion is always good and cool. To check if the list is sorted, use the following procedure:
+
+// Make a copy of the list of numbers.
+// Sort the first n-1 elements of the copy using bogobogosort.
+// Check to see if the nth element of the sorted copy is greater than the highest element of the first n-1 elements. If so, the copy is now sorted, else randomise the order of the elements of the copy and go to step 2.
+// Check to see if the copy is in the same order as the original list.
+
+const bogoBogoSort = a => {
   const arr = [...a]
   // todo
 
@@ -49,5 +69,6 @@ module.exports = {
   mergeSort,
   selectionSort,
   bogoSort,
+  bogoBogoSort,
   bubbleSort
 }

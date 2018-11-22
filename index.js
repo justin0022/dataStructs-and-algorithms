@@ -8,4 +8,3 @@ console.log(bst
   .insert(3)
   .getTree()
 )
-
