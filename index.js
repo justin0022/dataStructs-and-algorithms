@@ -2,10 +2,10 @@ const { createBST } = require('./dataStructure')
 
 const bst = createBST()
 
-bst
-  .insert(15)
-  .insert(25)
-  .insert(10)
+console.log(bst
+  .insert(5)
   .insert(7)
+  .insert(3)
+  .getTree()
+)
 
-console.log(bst.getTree())
