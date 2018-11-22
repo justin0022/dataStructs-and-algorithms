@@ -11,7 +11,7 @@ const createBST = () => {
       const node = createNode(val)
 
       const insertNode = (node, newNode) => {
-        if (newNode.val < node.data) {
+        if (newNode.val < node.val) {
           if (node.left === null) {
             node.left = newNode
           } else insertNode(node.left, newNode)
