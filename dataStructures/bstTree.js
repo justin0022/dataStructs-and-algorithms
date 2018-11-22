@@ -27,12 +27,19 @@ const createBST = () => {
 
       return this
     },
-    contains: () => {
-      return root
+    find: function (val) {
+      const search = (node, val) => {
+        if (node === null) return null
+        else if (val < node.val) search(node.left, val)
+        else if (val > node.val) search(node.right, val)
+        else return node
+      }
+      return search(root, val)
     },
     delete: val => {
 
-    }
+    },
+    getTree: () => root
   }
 }
 
