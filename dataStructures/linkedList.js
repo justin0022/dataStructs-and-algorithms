@@ -15,9 +15,7 @@ const createLinkedList = () => {
     insert: function (val) {
       const node = createNode(val)
       if (head === null) head = node
-      else {
-        insertNode(head, node)
-      }
+      else insertNode(head, node)
       return this
     },
     delete: function (val) {
