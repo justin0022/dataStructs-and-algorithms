@@ -43,7 +43,7 @@ test('find works', () => {
 
 test('contains works', () => {
   const bst = d.createBST()
-  
+
   expect(bst.contains(0)).toEqual(false)
 
   expect(bst
