@@ -49,5 +49,8 @@ test('linkedList contains works', () => {
 })
 
 test('linkedList delete works', () => {
+  const linkedList = d.createLinkedList()
 
+  expect(linkedList.insertFront(1).insertFront(1).delete(1).getLinkedList()).toEqual({ val: 1, next: null })
+  // expect(linkedList.insertFront(1).delete(1).getLinkedList()).toEqual(null)
 })

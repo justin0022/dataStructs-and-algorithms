@@ -3,16 +3,25 @@ const createNode = val => ({
   next: null
 })
 
-const insertNode = (node, val) => {
+const insertNode = (node, newNode) => {
   if (node.next === null) {
-    node.next = val
-  } else insertNode(node.next, val)
+    node.next = newNode
+  } else insertNode(node.next, newNode)
 }
 
 const findNode = (node, val) => {
   if (node == null) return null
   if (node.val === val) return node
   else return findNode(node.next, val)
+}
+
+// 1 -> 2 -> null
+const deleteNode = (node, val) => {
+  if (node == null || node.next == null) return
+  if (node.val === val) {
+    const nextNode = node.next
+    node = nextNode
+  } else deleteNode(node.next, val)
 }
 
 const createLinkedList = () => {
@@ -34,7 +43,8 @@ const createLinkedList = () => {
       return this
     },
     delete: function (val) {
-      // todo
+      deleteNode(head, val)
+      return this
     },
     find: val => findNode(head, val),
     contains: val => findNode(head, val) != null,
