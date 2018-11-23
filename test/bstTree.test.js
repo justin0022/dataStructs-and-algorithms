@@ -22,3 +22,39 @@ test('chained insertion works', () => {
     left: { val: 3, left: null, right: null },
     right: { val: 7, left: null, right: null } })
 })
+
+test('find works', () => {
+  const bst = d.createBST()
+
+  expect(bst.find(0)).toEqual(null)
+
+  expect(bst
+    .insert(5)
+    .find(5)
+  ).toEqual({ 'left': null, 'right': null, 'val': 5 })
+
+  expect(bst.find(6)).toEqual(null)
+
+  expect(bst
+    .insert(6)
+    .find(5)
+  ).toEqual({ 'left': null, 'right': { 'left': null, 'right': null, val: 6 }, 'val': 5 })
+})
+
+test('contains works', () => {
+  const bst = d.createBST()
+  
+  expect(bst.contains(0)).toEqual(false)
+
+  expect(bst
+    .insert(5)
+    .contains(5)
+  ).toEqual(true)
+
+  expect(bst.find(6)).toEqual(null)
+
+  expect(bst
+    .insert(6)
+    .contains(5)
+  ).toEqual(true)
+})
