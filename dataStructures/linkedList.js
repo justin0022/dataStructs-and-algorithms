@@ -18,14 +18,23 @@ const findNode = (node, val) => {
 const createLinkedList = () => {
   let head = null
   return {
-    insert: function (val) {
+    insertEnd: function (val) {
       const node = createNode(val)
       if (head == null) head = node
       else insertNode(head, node)
       return this
     },
+    insertFront: function (val) {
+      const node = createNode(val)
+      if (head == null) head = node
+      else {
+        node.next = head
+        head = node
+      }
+      return this
+    },
     delete: function (val) {
-
+      // todo
     },
     find: val => findNode(head, val),
     contains: val => findNode(head, val) != null,
