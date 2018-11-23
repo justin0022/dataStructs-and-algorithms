@@ -28,7 +28,7 @@ const createLinkedList = () => {
 
     },
     find: val => findNode(head, val),
-    contains: val => findNode(val) === null,
+    contains: val => findNode(head, val) != null,
     getLinkedList: () => head
   }
 }
