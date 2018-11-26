@@ -14,25 +14,27 @@ const swap = (arr, i, j) => {
   const t = arr[i]
   arr[i] = arr[j]
   arr[j] = t
-  return arr
 }
 
 const permutation = arr => {
   let n = arr.length
+  const result = []
+
   const generate = (n, arr) => {
-    if (n === 1) return arr
+    if (n === 1) result.push(arr)
     else {
       for (let i = 0; i < n; ++i) {
         generate(n - 1, arr)
         if (n % 2 === 0) {
-          swap(arr[i], arr[n - 1])
-        } else swap(arr[0], arr[n - 1])
+          swap(arr, i, n - 1)
+        } else swap(arr, 0, n - 1)
       }
-      generate(n - 1, arr)
     }
   }
+
   generate(n, arr)
-  return arr
+
+  return result
 }
 
 module.exports = permutation
