@@ -1,11 +1,38 @@
-const permutation = (...x) => {
-  const permutations = []
+// Heap(S, n)
+//  10: IF n > 2 THEN
+//  20:   Heap(S, n - 1)
+//  30: FOR i := 1 TO n - 1
+//  40:   IF n is even THEN
+//  50:     swap S[i] and S[n]
+//  60:   ELSE
+//  70:     swap S[1] and S[n]
+//  80:   process S
+//  90:   IF n > 2 THEN
+// 100:     Heap(S, n - 1)
 
-  for (let i = 0; i < x.length; i++) {
+const swap = (arr, i, j) => {
+  const t = arr[i]
+  arr[i] = arr[j]
+  arr[j] = t
+  return arr
+}
 
+const permutation = arr => {
+  let n = arr.length
+  const generate = (n, arr) => {
+    if (n === 1) return arr
+    else {
+      for (let i = 0; i < n; ++i) {
+        generate(n - 1, arr)
+        if (n % 2 === 0) {
+          swap(arr[i], arr[n - 1])
+        } else swap(arr[0], arr[n - 1])
+      }
+      generate(n - 1, arr)
+    }
   }
-
-  return permutation
+  generate(n, arr)
+  return arr
 }
 
 module.exports = permutation
