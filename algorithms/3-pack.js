@@ -1,5 +1,4 @@
 let possibilities = 0
-const mem = {}
 
 const threePack = n => {
   if (n === 0) return
