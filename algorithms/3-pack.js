@@ -1,5 +1,5 @@
 let possibilities = 0
-
+// super inefficient
 const threePack = n => {
   if (n === 0) return
 

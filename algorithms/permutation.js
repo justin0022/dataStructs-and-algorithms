@@ -24,9 +24,9 @@ const permutation = arr => {
     if (n === 1) result.push(arr)
     else {
       for (let i = 0; i < n; ++i) {
-        generate(n - 1, arr)
         if (n % 2 === 0) {
           swap(arr, i, n - 1)
+          generate(n - 1, arr)
         } else swap(arr, 0, n - 1)
       }
     }
